@@ -34,6 +34,9 @@ import docSerOne from '../../images/convenient.svg'
 import docSerTwo from '../../images/service.svg'
 import docSerThree from '../../images/tooth.svg'
 import { useLocation } from 'react-router-dom';
+import VistingConsultant from '../../images/service-one/dermatology-cosmetology-inn.jpg'
+import Psychiatrist from '../../images/service-one/shutterstock_361254713.jpg'
+
 
 const NextArrow = (props) => {
   const { onClick } = props
@@ -635,6 +638,54 @@ const VistingConsultantTwo = () => {
     </div>
   )
 }
+
+const VisitingConsultantThree = () => {
+
+  const visitConsult = [
+    {
+      head: "Dermatologist & Cosmetologist",
+      doc: "dr amruta dinkar",
+      course: "M.B.B.S., DVD(Skin & VD Gold medal)",
+      img: VistingConsultant
+    },
+    {
+      head: "Psychiatrist",
+      des: '(Mental Health & Wellness)',
+      img: Psychiatrist
+    }
+  ]
+
+  return (
+    <div className="visiting_consult_three container">
+      <div className="visiting_consult_three_content">
+        <HeadingDesign part1={"visiting"} part2={"consultant"} />
+        <div className="our_teams_body">
+          {
+            visitConsult.map((item, id) => {
+              return (
+                <div className="our_teams_box" key={id}>
+                  <div className="our_teams_box_img">
+                    <img src={item?.img} alt="" />
+                  </div>
+                  <div className="our_teams_box_content">
+                    <div className="our_teams_box_head">{item?.head}</div>
+                    {
+                      item?.des &&
+                      <div className="our_teams_box_post">{item?.des}</div>
+                    }
+
+                    <div className="our_teams_box_doc_name">{item?.doc}</div>
+                    <div className="our_teams_box_course">{item?.course}</div>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
+    </div>
+  )
+}
 const Home = () => {
 
 
@@ -700,7 +751,8 @@ const Home = () => {
 
         {/* <PatientSpeak /> */}
         {/* <VistingConsultant /> */}
-        <VistingConsultantTwo />
+        {/* <VistingConsultantTwo /> */}
+        <VisitingConsultantThree />
       </div>
     </div>
   )
