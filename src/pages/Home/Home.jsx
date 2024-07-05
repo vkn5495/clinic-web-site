@@ -622,7 +622,7 @@ const VistingConsultantTwo = () => {
     <div className="visting_consultant_two">
       <div className="visting_consultant_two_content container">
         <div className="visting_consultant_two_details">
-          hi
+          hi hello
         </div>
       </div>
     </div>
