@@ -239,6 +239,9 @@
   margin-bottom: 3rem;
   display: block;
 }
+.service_page_list_sub_title_two.width {
+  width: 75%;
+}
 .service_page_list_sub_title_two_img img {
   width: 100%;
   transition: all 0.3s ease;

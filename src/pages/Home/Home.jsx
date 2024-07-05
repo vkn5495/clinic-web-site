@@ -108,9 +108,10 @@ const OurStory = () => {
               <span>{i18n.t("dr")} {i18n.t("Sthita Gurrala")}</span>
               <span>BDS, MDS, AOCMF Fellow (Germany)</span>
             </div>
-            <div className="bio_of_doc_details_title">Oral & Maxillofacial Surgeon</div>
+
             <div
               className='bio_of_doc_details_col'>
+              <div className="bio_of_doc_details_title">Oral & Maxillofacial Surgeon</div>
               <div className="bio_of_doc_details_text">{i18n.t("bio_doc_text")}</div>
               <div className="bio_of_doc_details_des">{i18n.t("bio_doc_des")}</div>
               <div className="bio_of_doc_details_des">Since 2018, Dr Gurrala has worked as a visiting consultant in Goa. She collaborates with a team of specialized
@@ -322,7 +323,18 @@ const ServiceSectionThree = (props) => {
     slidesToShow: 3,
     slidesToScroll: 2,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }
+    ]
   };
 
   const context = useContext(AppContext)

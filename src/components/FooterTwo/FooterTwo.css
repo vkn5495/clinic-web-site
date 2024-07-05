@@ -67,3 +67,9 @@
   border-bottom: 1px solid var(--secondary-color);
   font-weight: 300;
 }
+@media screen and (max-width: 991px) {
+  .FooterTwo_content {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 3rem;
+  }
+}

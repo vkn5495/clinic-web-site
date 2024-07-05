@@ -12,14 +12,15 @@ import india from '../images/flag/in.png'
 import russia from '../images/flag/ru.png'
 import france from '../images/flag/fr.png'
 import china from '../images/flag/cn.png'
+import garmany from '../images/flag/de (1).png'
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube, FaWhatsappSquare } from 'react-icons/fa';
 import { IoIosMail, IoLogoWhatsapp } from "react-icons/io";
 import { servicesDoc } from '../data/service/ServiceDetails';
 import { AppContext } from '../Context/Context';
-
 import { FaCog } from 'react-icons/fa'
 import { Doctors } from '../data/doctor/doctor';
+import { GrLanguage } from "react-icons/gr";
 
 
 
@@ -311,6 +312,10 @@ const Branding = () => {
                                 )
                             })
                         }
+                        <div className="branding_doc_call_now">
+                            <span>call now :</span>
+                            <span> +91 9021594170</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -344,11 +349,30 @@ const HeroBanner = () => {
     )
 }
 const Navbar = () => {
+
+    const language = [
+        {
+            name: "english",
+            code: "en",
+            img: india
+        },
+        {
+            name: "russia",
+            code: "ru",
+            img: russia
+        },
+        {
+            name: "garmany",
+            code: "de",
+            img: garmany
+        }
+    ]
     const context = useContext(AppContext)
     const stickyDivRef = useRef(null);
     const [stickyHeader, setStickyHeader] = useState(false)
     const navigator = useNavigate()
     const location = useLocation()
+    const [hoverLanguage, setHoverLanguage] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -371,38 +395,8 @@ const Navbar = () => {
     const { t } = useTranslation();
 
     const handleChangeLanguage = (e) => {
-        const selectedLanguage = e.target.value;
-        i18n.changeLanguage(selectedLanguage)
+        i18n.changeLanguage(e)
     }
-    // const [click, setClick] = useState(null)
-    // const handleSetClick = (id) => {
-    //     setClick(id)
-    //     if (id === 1) {
-    //         navigator("/")
-    //     }
-    //     if (id === 3) {
-    //         navigator("contact")
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     function jasj() {
-    //         if (location.pathname === '/') {
-    //             setClick(1)
-    //         }
-    //         else if (location.pathname === 'service') {
-    //             setClick(2)
-    //         }
-    //         else if (location.pathname === 'meet') {
-    //             setClick(3)
-    //         }
-    //         else {
-    //             setClick(4)
-    //         }
-    //     }
-    //     jasj()
-    // }, [])
-
     return (
         <div className={`navabar ${stickyHeader ? "active" : ""}`} ref={stickyDivRef}>
             <div className={`nav-links container ${stickyHeader ? "p-0" : "margin_bottom"}`}>
@@ -420,12 +414,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 }
-                {/* <ul>
-                    <li><Link to='/'>{i18n.t("Home")}</Link></li>
-                    <li><Link to='/about'>{i18n.t("Service")}</Link></li>
-                    <li><Link to='/meet'>{i18n.t("MeetUs")}</Link></li>
-                    <li><Link to='/contact'>{i18n.t("ContactUs")}</Link></li>
-                </ul> */}
+
                 <nav className="nav main-menu">
                     <ul className={`navigation ${stickyHeader ? "item_gap" : "width_small"}`} id="navbar">
                         <li
@@ -491,9 +480,33 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </nav>
-
-                {/* <div className="lang">
-                    <select onChange={handleChangeLanguage} className='select-lang'>
+                <div className={`lang ${stickyHeader ? "item_gap" : ""}`}>
+                    <li
+                        className={`${stickyHeader ? "sticky" : ""} lang_content`}>
+                        <span
+                            className='lang_content_icon'
+                            onMouseOver={() => setHoverLanguage(true)}
+                            onMouseOut={() => setHoverLanguage(false)}><GrLanguage /></span>
+                        <div className={`lang_content_details ${hoverLanguage ? "active" : ""}`}>
+                            <div className="lang_content_details_des">
+                                <ul>
+                                    {
+                                        language?.map((item, id) => {
+                                            return (
+                                                <>
+                                                    <li key={id} onClick={() => handleChangeLanguage(item?.code)}>
+                                                        {/* <img src={item?.img} alt="" /> */}
+                                                        <span>{item?.name}</span>
+                                                    </li>
+                                                </>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    {/* <select onChange={handleChangeLanguage} className='select-lang'>
                         <option value="en">
                             <span>English</span>
                             <span>
@@ -524,8 +537,8 @@ const Navbar = () => {
                                 <img src={china} alt="" />
                             </span>
                         </option>
-                    </select>
-                </div> */}
+                    </select> */}
+                </div>
 
             </div>
         </div>

@@ -284,7 +284,7 @@ const SubTitleComTwo = ({ subTitle }) => {
     // console.log(subTitle.length)
 
     return (
-        <div className="service_page_list_sub_title_two">
+        <div className={`service_page_list_sub_title_two ${subTitle.length === 3 ? "width" : ""}`}>
             <>
                 {
                     subTitle?.length > 1 ?
@@ -331,10 +331,11 @@ const SubTitleComTwo = ({ subTitle }) => {
                             {
                                 subTitle?.map((u, i) => {
                                     return (
-                                        <div className={`service_page_list_sub_title_two_box 
+                                        <div className={`service_page_list_sub_title_two_box second 
                                      ${context.servicePerDetail?.name === u?.name ? "active" : ""}`}
                                             style={{
-                                                width: "25%"
+                                                width: "23.5%",
+                                                marginLeft: '10px'
                                             }}
                                             onClick={() => context.handleServiceDeatil(null, u)} key={i}>
                                             <div className="service_page_list_sub_title_two_img">

@@ -92,8 +92,8 @@ const FooterTwo = () => {
                                                                 (id === 1 || id === 4) ? () => context.handleServiceDeatil(prodt, null) :
                                                                     prodt?.link ? () => handleClick(prodt?.link) : null
                                                             }>
-                                                            <span>{prodt?.icon}</span>
-                                                            <span>{prodt?.name}</span>
+                                                            {prodt?.icon && <span>{prodt?.icon}</span>}
+                                                            {prodt?.name && <span>{prodt?.name}</span>}
                                                             <span>{prodt?.title}</span>
                                                         </div>
                                                     )
