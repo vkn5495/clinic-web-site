@@ -1010,6 +1010,37 @@
   background-color: #ffffff50;
   border-radius: 8px;
 }
+.visting_consultant_two {
+  /* background-color: var(--secondary-color); */
+  background: linear-gradient(
+    var(--secondary-color),
+    var(--main-color),
+    var(--secondary-color)
+  );
+}
+.visting_consultant_two_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.visting_consultant_two_details_box {
+  padding: 1rem;
+  margin: 2rem 1rem;
+  background-color: var(--white-color);
+  border-radius: 5px;
+  box-shadow: var(--main-color) 0 0 0.5rem;
+}
+.visting_consultant_two_details_head {
+  font-size: 26px;
+  font-weight: 600;
+  font-family: var(--ff-height);
+  color: var(--main-color);
+}
+.visting_consultant_two_details_des {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--ff-normal);
+}
 
 @media (max-width: 1399px) {
   .bio_of_doc_details {

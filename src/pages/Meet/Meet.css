@@ -52,9 +52,9 @@
   color: var(--main-color);
 }
 .meet_us_des_sub_title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
-  font-family: var(--ff-heading);
+  font-family: var(--ff-normal);
   margin: 1rem 0;
   color: var(--secondary-color);
   filter: brightness(0.5);
@@ -82,8 +82,9 @@
   width: 23rem;
   height: 23rem;
   object-fit: cover;
+  background-color: lavender;
   border-radius: 50%;
-  border: 10px solid var(--secondary-color);
+  /* border: 10px solid var(--secondary-color); */
   /* margin-left: 30px; */
   /* margin-bottom: 15px;*/
   /* vertical-align: middle; */

@@ -610,19 +610,26 @@ const VistingConsultantTwo = () => {
     {
       head: "Visting Consultant",
       des: "Dermatologist and Cosmetologist",
-      // img: VistingConsultant
     },
     {
       head: "Consulting Psychiatrist",
       des: '(Mental Health & Wellness)',
-      // img:Consulting Psychiatrist
     }
   ]
   return (
     <div className="visting_consultant_two">
       <div className="visting_consultant_two_content container">
         <div className="visting_consultant_two_details">
-          hi hello
+          {
+            visitConsult?.map((item, id) => {
+              return (
+                <div key={id} className="visting_consultant_two_details_box">
+                  <div className="visting_consultant_two_details_head">{item?.head}</div>
+                  <div className="visting_consultant_two_details_des">{item?.des}</div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </div>
@@ -693,6 +700,7 @@ const Home = () => {
 
         {/* <PatientSpeak /> */}
         {/* <VistingConsultant /> */}
+        <VistingConsultantTwo />
       </div>
     </div>
   )
