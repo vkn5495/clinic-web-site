@@ -242,6 +242,7 @@
 .bio_of_doc_details_des {
   color: var(--black-color);
   font-size: 16px;
+  line-height: 29px;
   font-weight: 300;
 }
 
@@ -876,9 +877,11 @@
 }
 .check_list_des_details {
   font-size: 18px;
+  line-height: 31px;
+  opacity: 0.8;
 }
 .check_list_heading {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 48px;
 }
 .check_list_details {

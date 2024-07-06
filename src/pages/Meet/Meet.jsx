@@ -29,7 +29,7 @@ const Meet = () => {
               <div className="meet_us_des_title">Meet Your {doctor?.profesional}, {doctor?.name}</div>
               <div className="meet_us_des_sub_title">{doctor?.subTitle}</div>
               <div className="meet_us_des_details">
-                <div className="meet_us_des_details_des">
+                <div className={`meet_us_des_details_des ${doctor?.name === "Dr Satyajit" ? "satyajit" : ""}`}>
                   {
                     doctor?.des?.map((item, id) => {
                       return (

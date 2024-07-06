@@ -3,7 +3,7 @@ import Satyajit from "../../images/new/Picsart_24-06-16_23-08-52-110.jpg";
 
 export const Doctors = [
   {
-    name: " Dr Sthita Gurrala",
+    name: "Dr Sthita Gurrala",
     degree: "MDS, AOCMF Fellow (Freiburg, Germany)",
     profesional: "Oral & Maxillofacial Surgeon",
     subTitle:
@@ -17,7 +17,7 @@ export const Doctors = [
     ],
   },
   {
-    name: " Dr Satyajit",
+    name: "Dr Satyajit",
     degree: "BDS",
     profesional: "Dentist",
     subProfesional: "Associate",

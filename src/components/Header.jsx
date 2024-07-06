@@ -305,18 +305,20 @@ const Branding = () => {
                         </div>
                     </div>
                     <div className="branding_right">
-                        {
-                            doctorName.slice(0, 1).map((doc, id) => {
-                                return (
-                                    <React.Fragment key={id}>
-                                        <div className="branding_doc_name">{doc}</div>
-                                    </React.Fragment>
-                                )
-                            })
-                        }
-                        <div className="branding_doc_call_now">
-                            <span>call now :</span>
-                            <span> +91 9021594170</span>
+                        <div className="branding_right_box">
+                            {
+                                doctorName.slice(0, 1).map((doc, id) => {
+                                    return (
+                                        <React.Fragment key={id}>
+                                            <div className="branding_doc_name">{doc}</div>
+                                        </React.Fragment>
+                                    )
+                                })
+                            }
+                            <div className="branding_doc_call_now">
+                                <span>call now :</span>
+                                <span> +91 9021594170</span>
+                            </div>
                         </div>
                     </div>
                 </div>
