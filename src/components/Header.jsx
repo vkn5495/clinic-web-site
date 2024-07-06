@@ -21,7 +21,8 @@ import { AppContext } from '../Context/Context';
 import { FaCog } from 'react-icons/fa'
 import { Doctors } from '../data/doctor/doctor';
 import { GrLanguage } from "react-icons/gr";
-
+import { MdOutlineMenu } from "react-icons/md";
+import { BsMenuButtonWideFill } from "react-icons/bs";
 
 
 const ThemeColor = () => {
@@ -357,12 +358,12 @@ const Navbar = () => {
             img: india
         },
         {
-            name: "russia",
+            name: "russian",
             code: "ru",
             img: russia
         },
         {
-            name: "garmany",
+            name: "german",
             code: "de",
             img: garmany
         }
@@ -397,6 +398,39 @@ const Navbar = () => {
     const handleChangeLanguage = (e) => {
         i18n.changeLanguage(e)
     }
+
+    const Language = () => {
+        return (
+            <div className={`lang ${stickyHeader ? "item_gap" : ""}`}>
+                <li
+                    className={`${stickyHeader ? "sticky" : ""} lang_content`}>
+                    <span
+                        className='lang_content_icon'
+                        onMouseOver={() => setHoverLanguage(true)}
+                        onMouseOut={() => setHoverLanguage(false)}><GrLanguage /></span>
+                    <div className={`lang_content_details ${hoverLanguage ? "active" : ""}`}>
+                        <div className="lang_content_details_des">
+                            <ul>
+                                {
+                                    language?.map((item, id) => {
+                                        return (
+                                            <>
+                                                <li key={id} onClick={() => handleChangeLanguage(item?.code)}>
+                                                    <img src={item?.img} alt="" />
+                                                    <span>{item?.name}</span>
+                                                </li>
+                                            </>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+            </div>
+        )
+    }
     return (
         <div className={`navabar ${stickyHeader ? "active" : ""}`} ref={stickyDivRef}>
             <div className={`nav-links container ${stickyHeader ? "p-0" : "margin_bottom"}`}>
@@ -416,7 +450,7 @@ const Navbar = () => {
                 }
 
                 <nav className="nav main-menu">
-                    <ul className={`navigation ${stickyHeader ? "item_gap" : "width_small"}`} id="navbar">
+                    <div className={`navigation ${stickyHeader ? "item_gap" : "width_small"}`} id="navbar">
                         <li
                             className={`${stickyHeader ? "sticky" : ""} ${context.navbar === 1 ? "current" : ""} 
                                 dropdown`}>
@@ -478,68 +512,14 @@ const Navbar = () => {
                                 </div>
                             </div> */}
                         </li>
-                    </ul>
+                    </div>
                 </nav>
-                <div className={`lang ${stickyHeader ? "item_gap" : ""}`}>
-                    <li
-                        className={`${stickyHeader ? "sticky" : ""} lang_content`}>
-                        <span
-                            className='lang_content_icon'
-                            onMouseOver={() => setHoverLanguage(true)}
-                            onMouseOut={() => setHoverLanguage(false)}><GrLanguage /></span>
-                        <div className={`lang_content_details ${hoverLanguage ? "active" : ""}`}>
-                            <div className="lang_content_details_des">
-                                <ul>
-                                    {
-                                        language?.map((item, id) => {
-                                            return (
-                                                <>
-                                                    <li key={id} onClick={() => handleChangeLanguage(item?.code)}>
-                                                        {/* <img src={item?.img} alt="" /> */}
-                                                        <span>{item?.name}</span>
-                                                    </li>
-                                                </>
-                                            )
-                                        })
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    {/* <select onChange={handleChangeLanguage} className='select-lang'>
-                        <option value="en">
-                            <span>English</span>
-                            <span>
-                                <img src={india} alt="" />
-                            </span>
-                        </option>
-                        <option value="hi">
-                            <span>Hindi</span>
-                            <span>
-                                <img src={india} alt="" />
-                            </span>
-                        </option>
-                        <option value="ru">
-                            <span>Russian</span>
-                            <span>
-                                <img src={russia} alt="" />
-                            </span>
-                        </option>
-                        <option value="fr">
-                            <span>French</span>
-                            <span>
-                                <img src={france} alt="" />
-                            </span>
-                        </option>
-                        <option value="ch">
-                            <span>Chinese</span>
-                            <span>
-                                <img src={china} alt="" />
-                            </span>
-                        </option>
-                    </select> */}
-                </div>
 
+                {/* <Language /> */}
+                <div className="navbar_toggle">
+                    <MdOutlineMenu />
+                    {/* <BsMenuButtonWideFill /> */}
+                </div>
             </div>
         </div>
     )

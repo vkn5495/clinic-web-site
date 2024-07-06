@@ -25,7 +25,7 @@ export const Doctors = [
     subTitle:
       "Dr. Satyajit holds a Bachelor of Dental Surgery degree from Goa Dental College & Hospital, Goa University.",
     des: [
-      "Dr. Satyajit 8 years of experience in operating his dental practice, Dr. Satyajit is eager to share his expertise and knowledge at Face Multispecialty Clinic, showcasing exceptional skills in the field of dentistry.",
+      "Dr. Satyajit with 8 years of experience in operating his dental practice, Dr. Satyajit is eager to share his expertise and knowledge at Face Multispecialty Clinic, showcasing exceptional skills in the field of dentistry.",
       "He is proficient in aesthetic rehabilitation of endodontically treated teeth and aesthetic restoration. He demonstrates astute clinical skills in re-treating cases and excels in overcoming errors.",
       "During his leisure time, Dr. Satyajit is an enthusiastic trekker, often embarking on challenging expeditions to scale the heights of the Western Ghats or the Himalayas.",
     ],
