@@ -717,4 +717,16 @@
   .navbar_logo .logo_img_two img {
     display: inline-block;
   }
+  .hero_banner_content img {
+    height: 15rem;
+  }
+  .hero_banner_hospital_name {
+    font-size: 90px;
+  }
+  .hero_banner_des {
+    font-size: 40px;
+  }
+  .hero_banner video {
+    height: 75vh;
+  }
 }

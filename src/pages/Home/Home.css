@@ -1034,7 +1034,7 @@
 }
 .bio_of_doc_details_col {
   padding: 1rem 1rem 0 0;
-  background-color: #ffffff50;
+  /* background-color: #ffffff50; */
   border-radius: 8px;
 }
 .visting_consultant_two {
@@ -1137,5 +1137,12 @@
   .our_teams_body {
     flex-direction: column;
     gap: 8rem;
+  }
+  .doc_heading span:nth-child(1) {
+    font-size: 34px;
+  }
+  .doc_heading span:nth-child(2) {
+    font-size: 58px;
+    line-height: 3rem;
   }
 }
