@@ -477,19 +477,16 @@ const CheckList = () => {
   const subPoint = [
     "List of Current Medications",
     "Known Allergies",
-    "Medical History",
     "Recent Medical Records",
-    "Specific Conditions Related to Oral Health",
-    "Special Considerations",
-    "Contact Information for Healthcare Providers"
   ]
   return (
     <div className="check_list container">
       <div className="check_list_content ">
         <HeadingDesign part1={"During your visit"} part2={"checklist"} big />
-        <div className="check_list_heading">Medical Information</div>
+
         <div className="check_list_details">
-          <div className="check_list_des">
+          <div className='check_list_des'>
+            <div className="check_list_heading">Medical Information</div>
             <div className="check_list_des_details">While visiting the clinic carry all medical document. An
               accurate medical/dental health history is vital since it
               may provide valuable information for the clinicians prior

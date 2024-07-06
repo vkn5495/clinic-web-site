@@ -23,6 +23,9 @@ import { Doctors } from '../data/doctor/doctor';
 import { GrLanguage } from "react-icons/gr";
 import { MdOutlineMenu } from "react-icons/md";
 import { BsMenuButtonWideFill } from "react-icons/bs";
+import LogoTwo from '../images/WhatsApp Image 2024-07-06 at 3.31.09 PM-Photoroom(1).png'
+import { MdEmail } from "react-icons/md";
+import LogoThree from '../images/53f86fd3-d9f2-44d6-8f6b-3b4679ad0d00-removebg.png'
 
 
 const ThemeColor = () => {
@@ -220,28 +223,25 @@ const ThemeColor = () => {
 
 const SocialIcon = () => {
     const socialMedia = [
-        // {
-        //     name: "YouTube",
-        //     icon: <FaYoutube />
-        // },
+
+        {
+            name: "FaceBook",
+            link: "https://www.facebook.com/facemultispecialtyclinic",
+            target: '_blank',
+            icon: <FaFacebook />
+        },
         {
             name: "whatApp",
             link: 'https://api.whatsapp.com/send?phone=9021594170',
+            target: '_blank',
             icon: <IoLogoWhatsapp />,
         },
         {
             name: "Gmail",
             link: 'mailto:facemultispecialtyclinic@gmail.com',
-            icon: <IoIosMail />
+            target: '_blank',
+            icon: <MdEmail />
         },
-        // {
-        //     name: "FaceBook",
-        //     icon: <FaFacebook />
-        // },
-        // {
-        //     name: "Twitter",
-        //     icon: <FaTwitter />
-        // },
         {
             name: "Instagram",
             link: 'https://www.instagram.com/facemultispecialtyclinic',
@@ -257,8 +257,12 @@ const SocialIcon = () => {
 
     ]
 
-    const handleClick = (item) => {
-        window.location.href = item
+    const handleClick = (url, target) => {
+        if (target === '_blank') {
+            window.open(url, target);
+        } else {
+            window.location.href = url;
+        }
     };
     return (
         <div className="social_icon">
@@ -268,7 +272,7 @@ const SocialIcon = () => {
                         socialMedia.map((item, idx) => {
                             return (
                                 <div key={idx} className="social_media_icon_box"
-                                    onClick={() => handleClick(item?.link)}
+                                    onClick={() => handleClick(item?.link, item?.target)}
                                 >{item?.icon}</div>
                             )
                         })
@@ -294,13 +298,10 @@ const Branding = () => {
                         }
                     >
                         <div className="logo_img">
-                            <img src={Logo} alt="" />
+                            <img src={LogoTwo} alt="" />
                         </div>
-                        <div className="logo_content">
-                            <div className="logo_name">face</div>
-                            <div className="logo_name_two">
-                                <span>{i18n.t("hospital_type")}</span>
-                            </div>
+                        <div className="logo_img_two">
+                            <img src={LogoThree} alt="" />
                         </div>
                     </div>
                     <div className="branding_right">
@@ -438,13 +439,10 @@ const Navbar = () => {
                     stickyHeader && <div className="navbar_logo"
                         onClick={() => navigator('/')}>
                         <div className="logo_img">
-                            <img src={image} className='color-filter' alt="" />
+                            <img src={LogoTwo} className='color-filter' alt="" />
                         </div>
-                        <div className="logo_content_two">
-                            <div className="logo_name">face</div>
-                            <div className="logo_name_two">
-                                <span>multispecialty clinic</span>
-                            </div>
+                        <div className="logo_img_two">
+                            <img src={LogoThree} className='color-filter' alt="" />
                         </div>
                     </div>
                 }
@@ -530,7 +528,7 @@ const Header = () => {
 
     return (
         <>
-            <ThemeColor />
+            {/* <ThemeColor /> */}
             <SocialIcon />
             <Branding />
             <Navbar />

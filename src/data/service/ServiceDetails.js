@@ -738,7 +738,7 @@ export const servicesDoc = [
             name: "Dental Implants",
             img: DentalImplants,
             mainDes: [
-              "Titanium screw-like metal is placed in the jaw bone",
+              "Biocompatible titanium implants are placed in the jaw bone.",
               "They act like tooth roots to support one or more false teeth",
             ],
           },

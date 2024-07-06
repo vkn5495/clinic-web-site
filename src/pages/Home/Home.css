@@ -1,7 +1,7 @@
 :root {
-  --main-color: #7b1fa2;
+  --main-color: #3f51b5;
   --light-color: #7b1fa237;
-  --secondary-color: #ab47bc;
+  --secondary-color: #7986cb;
   --white-color: #fff;
   --black-color: #000;
   --ff-normal: "Nunito", sans-serif;
@@ -172,10 +172,11 @@
   font-size: 76px;
   line-height: 4rem;
   color: var(--main-color);
-  filter: drop-shadow(4px 7px 3px rgb(127, 127, 127));
+  filter: drop-shadow(4px 7px 3px rgb(168, 168, 168));
   margin-left: 2rem;
+  margin-top: 8px;
   /* font-weight: 600; */
-  font-family: "Kurale", serif;
+  /* font-family: "Kurale", serif; */
   /* font-family: "Oswald", sans-serif !important; */
 }
 
@@ -867,6 +868,8 @@
 .check_list_details img {
   flex: 3;
   width: 10rem;
+  height: 21rem;
+  object-fit: cover;
 }
 .check_list_des {
   flex: 4;
@@ -875,13 +878,14 @@
   font-size: 18px;
 }
 .check_list_heading {
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   font-size: 48px;
 }
 .check_list_details {
   display: flex;
   gap: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .check_list_des_ponts {
   padding: 1rem 0;
@@ -1128,7 +1132,7 @@
     margin: auto;
   }
   .check_list_heading {
-    text-align: center;
+    /* text-align: center; */
   }
   .our_teams_body {
     flex-direction: column;

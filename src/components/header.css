@@ -1,7 +1,7 @@
 :root {
-  --main-color: #7b1fa2;
+  --main-color: #3f51b5;
   --light-color: #7b1fa237;
-  --secondary-color: #9c27b0;
+  --secondary-color: #7986cb;
   --white-color: #fff;
   --black-color: #000;
   --ff-normal: "Nunito", sans-serif;
@@ -11,9 +11,14 @@
   --ff-Georgian: "Noto Serif Georgian", serif;
 }
 
-.branding_left img {
+.branding_left .logo_img img {
   height: 113px;
   width: auto;
+}
+.branding_left .logo_img_two img {
+  height: 113px;
+  width: auto;
+  display: none;
 }
 .branding {
   /* margin: 1rem 0 0 0; */
@@ -191,7 +196,11 @@
   cursor: pointer;
 }
 .navbar_logo .logo_img img {
-  width: 5rem;
+  height: 80px;
+}
+.navbar_logo .logo_img_two img {
+  height: 80px;
+  display: none;
 }
 .logo_content_two .logo_name {
   font-size: 38px;
@@ -488,16 +497,19 @@
 .social_media_icon_box:hover {
   color: var(--secondary-color);
 }
-.social_media_icon_box:nth-child(1) {
+.social_media_icon_box:nth-child(2) {
   background: #00d66f;
 }
-.social_media_icon_box:nth-child(2) {
+.social_media_icon_box:nth-child(1) {
   background: #337ab7;
 }
-.social_media_icon_box:nth-child(4) {
+.social_media_icon_box:nth-child(3) {
+  background: #e33217;
+}
+.social_media_icon_box:nth-child(5) {
   background: #1da1f2;
 }
-.social_media_icon_box:nth-child(3) {
+.social_media_icon_box:nth-child(4) {
   background: radial-gradient(
     circle at 30% 107%,
     #fdf497 0%,
@@ -507,17 +519,20 @@
     #285aeb 90%
   );
 }
-.social_media_icon_box:hover:nth-child(1) {
+.social_media_icon_box:hover:nth-child(2) {
   color: #00d66f;
 }
-.social_media_icon_box:hover:nth-child(2) {
+.social_media_icon_box:hover:nth-child(1) {
   color: #337ab7;
 }
-.social_media_icon_box:hover:nth-child(4) {
+.social_media_icon_box:hover:nth-child(3) {
+  color: #e33217;
+}
+.social_media_icon_box:hover:nth-child(5) {
   color: #0079b5;
 }
-.social_media_icon_box:hover:nth-child(3) {
-  background: radial-gradient(
+.social_media_icon_box:hover:nth-child(4) {
+  color: radial-gradient(
     circle at 30% 107%,
     #fdf497 0%,
     #fdf497 5%,
@@ -630,9 +645,10 @@
   text-transform: capitalize;
   color: var(--black-color);
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 500;
   cursor: pointer;
-  filter: drop-shadow(2px 2px 1px black);
+  opacity: 0.8;
+  /* filter: drop-shadow(2px 2px 1px black); */
 }
 .navigation {
   display: flex;
@@ -684,5 +700,21 @@
   .branding_right,
   .branding_doc_call_now {
     font-size: 19px;
+  }
+  .branding_left .logo_img img {
+    height: 113px;
+    width: auto;
+    display: none;
+  }
+  .branding_left .logo_img_two img {
+    height: 113px;
+    width: auto;
+    display: inline-block;
+  }
+  .navbar_logo .logo_img img {
+    display: none;
+  }
+  .navbar_logo .logo_img_two img {
+    display: inline-block;
   }
 }

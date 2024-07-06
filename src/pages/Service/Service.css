@@ -1,7 +1,7 @@
 :root {
-  --main-color: #7b1fa2;
+  --main-color: #3f51b5;
   --light-color: #7b1fa237;
-  --secondary-color: #ab47bc;
+  --secondary-color: #7986cb;
   --white-color: #fff;
   --black-color: #000;
   --ff-normal: "Nunito", sans-serif;
@@ -259,7 +259,9 @@
   max-width: 22rem;
   text-align: center;
 }
-
+.service_page_list_sub_title_two_des_box.highlight {
+  background: rgb(188, 188, 188);
+}
 .service_page_list_sub_title_two_box {
   box-shadow: rgba(0 0 0 /0.2) 5px 5px 10px;
   border-radius: 5px;

@@ -312,7 +312,10 @@ const SubTitleComTwo = ({ subTitle }) => {
                                                             {
                                                                 u?.mainDes?.map((item, id) => {
                                                                     return (
-                                                                        <div key={id} className="service_page_list_sub_title_two_des_box">{item}</div>
+                                                                        <div key={id} className={`service_page_list_sub_title_two_des_box
+                                                                            ${u?.name === "Temporomandibular Joint (TMJ) disorders" &&
+                                                                                id === 3 ? "highlight" : ""
+                                                                            }`}>{item}</div>
                                                                     )
                                                                 })
                                                             }

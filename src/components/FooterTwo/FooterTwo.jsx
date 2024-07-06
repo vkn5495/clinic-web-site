@@ -11,11 +11,16 @@ import { FaLinkedin } from "react-icons/fa";
 import { servicesDoc } from '../../data/service/ServiceDetails';
 import { Doctors } from '../../data/doctor/doctor';
 import { AppContext } from '../../Context/Context';
+import { MdEmail } from "react-icons/md";
 
 const FooterTwo = () => {
     const context = useContext(AppContext)
-    const handleClick = (item) => {
-        window.location.href = item
+    const handleClick = (url, target) => {
+        if (target === '_blank') {
+            window.open(url, target);
+        } else {
+            window.location.href = url;
+        }
     };
     const footer = [
         {
@@ -48,10 +53,12 @@ const FooterTwo = () => {
         {
             heading: "social media",
             sub_head: [
-                // {
-                //     name: "FaceBook",
-                //     icon: <FaFacebook />
-                // },
+                {
+                    name: "FaceBook",
+                    link: "https://www.facebook.com/facemultispecialtyclinic",
+                    target: '_blank',
+                    icon: <FaFacebook />
+                },
                 {
                     name: "Instagram",
                     link: 'https://www.instagram.com/facemultispecialtyclinic',
@@ -67,8 +74,9 @@ const FooterTwo = () => {
                 {
                     name: "facemultispecialtyclinic@gmail.com",
                     link: 'mailto:facemultispecialtyclinic@gmail.com',
-                    icon: <IoIosMail />
-                },
+                    target: '_blank',
+                    icon: <MdEmail />
+                }
             ]
         }
     ]
@@ -90,7 +98,7 @@ const FooterTwo = () => {
                                                         <div key={i} className="FooterTwo_des_box"
                                                             onClick={id === 0 ? () => context.handleClickDoctor(prodt) :
                                                                 (id === 1 || id === 4) ? () => context.handleServiceDeatil(prodt, null) :
-                                                                    prodt?.link ? () => handleClick(prodt?.link) : null
+                                                                    prodt?.link ? () => handleClick(prodt?.link, prodt?.target) : null
                                                             }>
                                                             {prodt?.icon && <span>{prodt?.icon}</span>}
                                                             {prodt?.name && <span>{prodt?.name}</span>}

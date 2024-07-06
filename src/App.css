@@ -7,8 +7,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
 
 :root {
-  --main-color: #7b1fa2;
-  --secondary-color: #9c27b0;
+  --main-color: #3f51b5;
+  --light-color: #7b1fa237;
+  --secondary-color: #7986cb;
   --white-color: #fff;
   --black-color: #000;
   --ff-normal: "Nunito", sans-serif;
@@ -21,8 +22,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Roboto", sans-serif; */
-  font-family: var(--ff-normal);
+  font-family: "Roboto", sans-serif;
+  /* font-family: var(--ff-normal); */
 }
 li {
   list-style: none;
