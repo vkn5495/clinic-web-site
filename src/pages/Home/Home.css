@@ -219,7 +219,7 @@
   text-transform: capitalize;
 }
 .bio_of_doc_details_sub_title span:nth-child(2) {
-  font-family: "Kurale", serif;
+  /* font-family: "Kurale", serif; */
   font-weight: 700;
   filter: brightness(0.5);
 }
@@ -1146,6 +1146,9 @@
   }
   .doc_heading span:nth-child(2) {
     font-size: 58px;
-    line-height: 3rem;
+    line-height: 2.5rem;
+  }
+  .bio_of_doc_details_title {
+    margin-bottom: 8px;
   }
 }
