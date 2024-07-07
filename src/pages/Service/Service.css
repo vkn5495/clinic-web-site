@@ -404,7 +404,7 @@
 
 @media screen and (max-width: 1300px) {
   .service_page_list_sub_title_two.width {
-    width: 100%;
+    width: 96%;
   }
   .single_item {
     width: 31.5%;
@@ -486,6 +486,12 @@
 }
 
 @media screen and (max-width: 767px) {
+  .hero_banner_content.new_design {
+    height: 42vh;
+  }
+  .bg_design {
+    height: 43.5vh;
+  }
   .service_page_des_title span:first-child {
     font-size: 28px;
   }
@@ -494,5 +500,16 @@
   }
   .service_page_des_content_details_des {
     gap: 1rem;
+  }
+  .single_item {
+    width: 49%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .single_item {
+    width: 98%;
+  }
+  .service_page_des_title span:first-child {
+    font-size: 24px;
   }
 }
