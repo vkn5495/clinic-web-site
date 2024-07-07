@@ -292,7 +292,7 @@
 } */
 
 .service_section_content {
-  padding: 1rem;
+  padding: 2rem;
   background-color: var(--white-color);
   margin-top: 5rem;
   box-shadow: rgba(0 0 0 / 0.2) 0 0 25px;
@@ -424,7 +424,7 @@
 .service_section .contral-btn {
   position: absolute;
   margin: auto;
-  top: 25%;
+  top: 32%;
   width: 100%;
   z-index: 7;
 }
@@ -499,7 +499,7 @@
   text-align: center;
   color: var(--main-color);
   font-size: 22px;
-  height: 4.5rem;
+  height: 3rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -856,11 +856,13 @@
 .our_teams_box_social_media_icon:hover::before {
   width: 100%;
 }
-
+.check_list {
+  margin: 3rem 0;
+}
 .check_list_content {
   background-color: var(--white-color);
-  margin: 3rem 0;
-  padding: 1rem 3rem;
+  /* margin: 2rem 0; */
+  padding: 2rem;
   box-shadow: rgba(0 0 0 / 0.2) 0 0 25px;
 }
 .big_one {
@@ -1090,7 +1092,9 @@
   .bio_of_doc_details {
     gap: 0;
   }
-
+  .check_list_details img {
+    height: auto;
+  }
   .liquid_shape {
     width: 35rem;
     top: 25%;
@@ -1111,7 +1115,7 @@
     display: none;
   }
   .check_list_heading {
-    margin: 1rem 0;
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 991px) {
@@ -1136,6 +1140,7 @@
   }
   .check_list_heading {
     /* text-align: center; */
+    font-size: 34px;
   }
   .our_teams_body {
     flex-direction: column;
@@ -1145,10 +1150,133 @@
     font-size: 34px;
   }
   .doc_heading span:nth-child(2) {
-    font-size: 58px;
+    font-size: 54px;
     line-height: 2.5rem;
+    margin-left: 0;
   }
   .bio_of_doc_details_title {
     margin-bottom: 8px;
+  }
+  .doc_heading {
+    margin-top: 0;
+  }
+  .big_one {
+    margin-left: 3rem !important;
+  }
+  .home_page_content {
+    padding: 3rem 0 0 0;
+  }
+  .service_section_content {
+    margin-top: 3rem;
+  }
+  .doc_heading {
+    margin-right: 0;
+  }
+  .bio_of_doc_details_col {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .bio_of_doc_img img {
+    max-width: 22rem;
+  }
+  .liquid_shape {
+    width: 28.5rem;
+    top: 52%;
+    right: 50px;
+    height: 50%;
+  }
+  .bio_of_doc_details {
+    margin-top: 2rem;
+  }
+  .doc_heading span:nth-child(1) {
+    font-size: 28px;
+  }
+  .doc_heading span:nth-child(2) {
+    font-size: 48px;
+    line-height: 2rem;
+  }
+  .bio_of_doc_details_sub_title span:first-child {
+    font-size: 18px;
+  }
+  .bio_of_doc_details_title {
+    font-size: 36px;
+  }
+  .bio_of_doc_details_des {
+    line-height: 24px;
+  }
+  .service_details_des_box_name {
+    height: 2rem;
+  }
+  .check_list_details {
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .check_list_des_details {
+    line-height: 28px;
+  }
+  .our_teams_body {
+    margin: 2rem 0;
+    margin-bottom: 0;
+    padding: 6rem 2rem 2rem 2rem;
+    gap: 6rem;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .bio_of_doc_content,
+  .service_section_content,
+  .check_list_content,
+  .visiting_consult_three_content {
+    padding: 2rem 1rem;
+  }
+  .liquid_shape {
+    width: 28rem;
+    top: 51%;
+  }
+  .big_one {
+    margin: 0 !important;
+  }
+  .doc_heading span:nth-child(1) {
+    text-align: center;
+  }
+  .doc_heading span:nth-child(2) {
+    line-height: 2.5rem;
+  }
+  .our_teams_box_head {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .our_teams_box_doc_name {
+    font-size: 28px;
+    padding: 8px 0;
+  }
+  .our_teams_box_course {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .liquid_shape {
+    width: 27rem;
+    top: 54%;
+    right: 47px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .liquid_shape {
+    width: 27rem;
+    top: 54%;
+    right: 47px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .bio_of_doc_img img {
+    max-width: 19rem;
+  }
+  .liquid_shape {
+    width: 24rem;
+    top: 61%;
+    right: 0;
   }
 }

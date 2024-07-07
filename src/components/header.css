@@ -51,7 +51,7 @@
 .hero_banner_content {
   width: 100%;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
@@ -666,6 +666,9 @@
 .navbar_toggle {
   display: none;
 }
+.branding_doc_call_now span:nth-child(1) {
+  display: none;
+}
 
 @media screen and (max-width: 1199px) {
   .nav-links {
@@ -735,5 +738,48 @@
   }
   .hero_banner video {
     height: 75vh;
+  }
+  .hero_banner_content {
+    height: 65vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero_banner_content img {
+    height: 12rem;
+  }
+  .hero_banner_hospital_name {
+    font-size: 75px;
+  }
+  .hero_banner_des {
+    font-size: 32px;
+  }
+  .hero_banner video {
+    height: 65vh;
+  }
+  .hero_banner_content {
+    height: 55vh;
+  }
+}
+@media screen and (max-width: 590px) {
+  .branding_doc_call_now span:nth-child(2) {
+    display: none;
+  }
+  .branding_doc_call_now span:nth-child(1) {
+    display: inline-block;
+  }
+  .branding_left .logo_img_two img {
+    height: 90px;
+  }
+  .nav-links {
+    padding: 5px 0;
+  }
+  .hero_banner {
+    top: 91px;
+  }
+  .navbar_logo .logo_img_two img {
+    height: 65px;
+  }
+  .navbar_toggle {
+    font-size: 32px;
   }
 }

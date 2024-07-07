@@ -17,7 +17,7 @@
   height: 65vh;
   width: 100%;
   background-color: #dfe2f0;
-  z-index: 0;
+  z-index: 1;
   clip-path: polygon(0 0, 100% 0%, 100% 81%, 50% 99%, 0 81%);
 }
 .service_page_details {
@@ -38,6 +38,11 @@
   );
   padding-left: 1rem;
   padding-top: 7rem;
+  position: relative;
+}
+.service_page_list_main {
+  position: sticky;
+  top: 5.5rem;
 }
 .service_page_list_name {
   padding: 8px;
@@ -106,8 +111,20 @@
   /* gap: 3rem; */
   /* justify-content: space-around; */
 }
-.service_page_des_content {
+.service_page_des_content,
+.service_page_details_two {
   display: block;
+  transition: all 0.4s ease;
+}
+.service_page_details_two.mobile {
+  height: 0;
+  transform: scaleY(0);
+  transition: all 0.8s ease;
+  overflow: hidden;
+}
+.service_page_details_two.mobile.active {
+  height: 100%;
+  transform: scaleY(1);
 }
 .first_col {
   flex: 1;
@@ -145,11 +162,24 @@
   /* border-radius: 50%; */
 }
 .service_page_des_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: var(--white-color);
   background-color: var(--main-color);
+  padding: 8px 2rem;
+  box-shadow: var(--main-color) 0 0 0.5rem;
+}
+.service_page_des_title span:first-child {
   font-size: 48px;
   text-transform: capitalize;
-  padding: 8px 2rem;
+}
+.service_page_des_title span:last-child {
+  font-size: 30px;
+  transition: 0.3s;
+}
+.service_page_des_title span:last-child.active {
+  transform: rotate(180deg);
 }
 .service_page_des_content_details {
   padding: 3rem;
@@ -161,6 +191,7 @@
 .service_page_list_sub_head {
   padding: 8px;
   text-transform: capitalize;
+  /* flex: 1; */
   /* text-align: center; */
   font-size: 20px;
   background-color: var(--white-color);
@@ -238,6 +269,7 @@
 .service_page_list_sub_title_two {
   margin-bottom: 3rem;
   display: block;
+  margin: 0 1rem;
 }
 .service_page_list_sub_title_two.width {
   width: 75%;
@@ -260,7 +292,8 @@
   text-align: center;
 }
 .service_page_list_sub_title_two_des_box.highlight {
-  background: rgb(188, 188, 188);
+  background: rgb(220, 220, 220);
+  font-weight: 600;
 }
 .service_page_list_sub_title_two_box {
   box-shadow: rgba(0 0 0 /0.2) 5px 5px 10px;
@@ -351,9 +384,115 @@
 .service_page_des_content_details_des_sub_details {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.service_page_des_content_details_des_sub_details_box {
+  flex-basis: 275px;
 }
 .service_page_des_content_details_des_sub_details_two .box {
   list-style: disc;
   text-indent: -22px;
   padding-left: 25px;
+}
+.single_item {
+  width: 23.5%;
+  margin-left: 10px;
+}
+.mobile_mode {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .service_page_list_sub_title_two.width {
+    width: 100%;
+  }
+  .single_item {
+    width: 31.5%;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .service_page_list {
+    width: 35%;
+  }
+  .service_page_des {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .bg_design {
+    height: 52.5vh;
+  }
+  .service_page_list {
+    display: none;
+  }
+  .service_page_details {
+    margin-bottom: 3rem;
+  }
+  .hero_banner_content.new_design {
+    height: 48vh;
+  }
+  .service_page_des {
+    width: 100%;
+  }
+  .desktop_mode {
+    display: none;
+  }
+  .mobile_mode {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .hero_banner.not_homa_page {
+    height: 57vh;
+  }
+  .service_page_des_title span:first-child {
+    font-size: 32px;
+  }
+  .service_page_des_content_details_des_details {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .service_page_des_content_details {
+    padding: 2rem 3rem;
+  }
+  .service_page_des_title {
+    background-color: var(--white-color);
+    color: var(--main-color);
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+  }
+  .service_page_des_title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: all 0.5s ease;
+  }
+  .service_page_des_title.active {
+    color: var(--white-color);
+  }
+  .service_page_des_title.active::before {
+    height: 100%;
+  }
+  .service_page_des_content_details_des {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .service_page_des_title span:first-child {
+    font-size: 28px;
+  }
+  .service_page_des_content_details_des_details {
+    font-size: 22px;
+  }
+  .service_page_des_content_details_des {
+    gap: 1rem;
+  }
 }

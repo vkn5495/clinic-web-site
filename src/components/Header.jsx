@@ -26,6 +26,7 @@ import { BsMenuButtonWideFill } from "react-icons/bs";
 import LogoTwo from '../images/WhatsApp Image 2024-07-06 at 3.31.09 PM-Photoroom(1).png'
 import { MdEmail } from "react-icons/md";
 import LogoThree from '../images/53f86fd3-d9f2-44d6-8f6b-3b4679ad0d00-removebg.png'
+import { IoIosCall } from "react-icons/io";
 
 
 const ThemeColor = () => {
@@ -316,6 +317,7 @@ const Branding = () => {
                                 })
                             }
                             <div className="branding_doc_call_now">
+                                <span><IoIosCall />:</span>
                                 <span>call now :</span>
                                 <span> +91 9021594170</span>
                             </div>

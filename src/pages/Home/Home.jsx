@@ -333,7 +333,16 @@ const ServiceSectionThree = (props) => {
           infinite: true,
           dots: true
         }
-      }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
     ]
   };
 

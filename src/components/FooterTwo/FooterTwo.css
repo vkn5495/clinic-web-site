@@ -74,3 +74,15 @@
     gap: 3rem;
   }
 }
+@media screen and (max-width: 767px) {
+  .FooterTwo_box {
+    justify-content: flex-start;
+    padding: 0 2rem;
+    width: 100%;
+    display: block;
+  }
+  .FooterTwo_content {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
