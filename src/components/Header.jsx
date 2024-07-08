@@ -27,6 +27,7 @@ import LogoTwo from '../images/WhatsApp Image 2024-07-06 at 3.31.09 PM-Photoroom
 import { MdEmail } from "react-icons/md";
 import LogoThree from '../images/53f86fd3-d9f2-44d6-8f6b-3b4679ad0d00-removebg.png'
 import { IoIosCall } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
 
 const ThemeColor = () => {
@@ -379,6 +380,31 @@ const Navbar = () => {
     const navigator = useNavigate()
     const location = useLocation()
     const [hoverLanguage, setHoverLanguage] = useState(false)
+    const [toggle, setToggle] = useState(false)
+
+    const divRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setToggle(false);
+        };
+
+        const handleClickOutside = (event) => {
+            if (divRef.current && !divRef.current.contains(event.target)) {
+                setToggle(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Cleanup the event listeners on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -397,6 +423,10 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const toggleOnclick = () => {
+        setToggle(!toggle)
+    }
 
     const { t } = useTranslation();
 
@@ -436,6 +466,7 @@ const Navbar = () => {
             </div>
         )
     }
+    console.log(toggle)
     return (
         <div className={`navabar ${stickyHeader ? "active" : ""}`} ref={stickyDivRef}>
             <div className={`nav-links container ${stickyHeader ? "p-0" : "margin_bottom"}`}>
@@ -451,7 +482,9 @@ const Navbar = () => {
                     </div>
                 }
 
-                <nav className="nav main-menu">
+                <nav ref={divRef} className={`nav main-menu ${stickyHeader ? "need_gap" : ""} ${toggle ? "open" : "close"}`}>
+                    <div className="close_button"
+                        onClick={toggleOnclick}><IoClose /></div>
                     <div className={`navigation ${stickyHeader ? "item_gap" : "width_small"}`} id="navbar">
                         <li
                             className={`${stickyHeader ? "sticky" : ""} ${context.navbar === 1 ? "current" : ""} 
@@ -463,10 +496,10 @@ const Navbar = () => {
                                 }}>{i18n.t("Home")}</span>
                         </li>
                         <li
-                            className={`${stickyHeader ? "sticky" : ""} ${context.navbar === 2 ? "current" : ""} dropdown mega-menu`}
+                            className={`${stickyHeader ? "sticky" : ""} ${context.navbar === 2 ? "current" : ""} dropdown`}
                             id="mega-menu">
                             <span onClick={() => context.handleClickNavbar(2)}>{i18n.t("Service")}</span>
-                            <div className="mega-menu">
+                            <div className={`mega-menu service`}>
                                 <div className="mega-menu-bar row">
                                     <ul>
                                         {
@@ -488,7 +521,7 @@ const Navbar = () => {
                         <li
                             className={`${stickyHeader ? "sticky" : ""} ${context.navbar === 3 ? "current" : ""} dropdown`}>
                             <span onClick={() => context.handleClickNavbar(3)}>{i18n.t("MeetUs")}</span>
-                            <div className="mega-menu">
+                            <div className="mega-menu meet">
                                 <div className="mega-menu-bar row">
                                     <ul>
                                         {
@@ -518,7 +551,8 @@ const Navbar = () => {
                 </nav>
 
                 {/* <Language /> */}
-                <div className="navbar_toggle">
+                <div className="navbar_toggle"
+                    onClick={toggleOnclick}>
                     <MdOutlineMenu />
                     {/* <BsMenuButtonWideFill /> */}
                 </div>

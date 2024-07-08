@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -13,11 +13,23 @@ import "slick-carousel/slick/slick-theme.css";
 import Service from "./pages/Service/Service";
 import FooterTwo from "./components/FooterTwo/FooterTwo";
 import { AppProvider } from "./Context/Context";
+import { useEffect } from "react";
 
 function App() {
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  };
+
   return (
     <BrowserRouter>
       <AppProvider>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />

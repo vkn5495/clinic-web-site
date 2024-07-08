@@ -54,7 +54,7 @@ const FooterTwo = () => {
             heading: "social media",
             sub_head: [
                 {
-                    name: "FaceBook",
+                    name: "Facebook",
                     link: "https://www.facebook.com/facemultispecialtyclinic",
                     target: '_blank',
                     icon: <FaFacebook />
