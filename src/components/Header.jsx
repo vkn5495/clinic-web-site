@@ -28,6 +28,7 @@ import { MdEmail } from "react-icons/md";
 import LogoThree from '../images/53f86fd3-d9f2-44d6-8f6b-3b4679ad0d00-removebg.png'
 import { IoIosCall } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { TbSocial } from 'react-icons/tb';
 
 
 const ThemeColor = () => {
@@ -224,6 +225,7 @@ const ThemeColor = () => {
 }
 
 const SocialIcon = () => {
+    const context = useContext(AppContext)
     const socialMedia = [
 
         {
@@ -268,7 +270,12 @@ const SocialIcon = () => {
     };
     return (
         <div className="social_icon">
-            <div className="social_icon_content">
+            <div className={`social_media_icon
+            ${context.social ? "" : "active"}`}
+                onClick={() => context.socialOnclick()}><TbSocial /></div>
+            <div ref={context.socialRef} className={`social_icon_content
+                ${context.social ? "active" : ""}`}
+            >
                 <div className="box">
                     {
                         socialMedia.map((item, idx) => {
@@ -382,51 +389,7 @@ const Navbar = () => {
     const [hoverLanguage, setHoverLanguage] = useState(false)
     const [toggle, setToggle] = useState(false)
 
-    const divRef = useRef(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setToggle(false);
-        };
-
-        const handleClickOutside = (event) => {
-            if (divRef.current && !divRef.current.contains(event.target)) {
-                setToggle(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        document.addEventListener('mousedown', handleClickOutside);
-
-        // Cleanup the event listeners on component unmount
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const stickyDiv = stickyDivRef.current;
-            if (window.scrollY > 125) {
-                setStickyHeader(true)
-            } else {
-                setStickyHeader(false)
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const toggleOnclick = () => {
-        setToggle(!toggle)
-    }
 
     const { t } = useTranslation();
 
@@ -466,7 +429,6 @@ const Navbar = () => {
             </div>
         )
     }
-    console.log(toggle)
     return (
         <div className={`navabar ${stickyHeader ? "active" : ""}`} ref={stickyDivRef}>
             <div className={`nav-links container ${stickyHeader ? "p-0" : "margin_bottom"}`}>
@@ -482,9 +444,9 @@ const Navbar = () => {
                     </div>
                 }
 
-                <nav ref={divRef} className={`nav main-menu ${stickyHeader ? "need_gap" : ""} ${toggle ? "open" : "close"}`}>
+                <nav ref={context.divRef} className={`nav main-menu ${stickyHeader ? "need_gap" : ""} ${context.toggle ? "open" : "close"}`}>
                     <div className="close_button"
-                        onClick={toggleOnclick}><IoClose /></div>
+                        onClick={() => context.toggleOnclick()}><IoClose /></div>
                     <div className={`navigation ${stickyHeader ? "item_gap" : "width_small"}`} id="navbar">
                         <li
                             className={`${stickyHeader ? "sticky" : ""} ${context.navbar === 1 ? "current" : ""} 
@@ -508,7 +470,7 @@ const Navbar = () => {
                                                 return (
                                                     <>
                                                         <li key={id}
-                                                            onClick={() => context.handleServiceDeatil(item, null)}>{item?.title}</li>
+                                                            onClick={() => context.handleServiceDeatil(item, "null")}>{item?.title}</li>
                                                     </>
                                                 )
                                             })
@@ -552,7 +514,7 @@ const Navbar = () => {
 
                 {/* <Language /> */}
                 <div className="navbar_toggle"
-                    onClick={toggleOnclick}>
+                    onClick={() => context.toggleOnclick()}>
                     <MdOutlineMenu />
                     {/* <BsMenuButtonWideFill /> */}
                 </div>

@@ -335,13 +335,13 @@ const SubTitleComTwo = ({ subTitle }) => {
     // console.log(subTitle.length)
 
     return (
-        <div className={`service_page_list_sub_title_two ${subTitle.length === 3 ? "width" : ""}`}>
+        <div className={`service_page_list_sub_title_two ${subTitle?.length === 3 ? "width" : ""}`}>
             <>
                 {
                     subTitle?.length > 1 ?
                         <>
                             {
-                                <Slider {...(subTitle.length > 3 ? settings : newSetting)}
+                                <Slider {...(subTitle?.length > 3 ? settings : newSetting)}
                                     ref={slider => sliderRef1 = slider}
                                 >
                                     {
@@ -370,8 +370,8 @@ const SubTitleComTwo = ({ subTitle }) => {
                                                                 })
                                                             }
                                                         </div>
-                                                        { u?.note && <div className="to_note">{u?.note}</div>}
-                                                        { u?.mainDesTwo && <ComOne item={u?.mainDesTwo} />}
+                                                        {u?.note && <div className="to_note">{u?.note}</div>}
+                                                        {u?.mainDesTwo && <ComOne item={u?.mainDesTwo} />}
                                                     </div>
                                                 </div>
                                             )
@@ -405,9 +405,9 @@ const SubTitleComTwo = ({ subTitle }) => {
                                                             )
                                                         })
                                                     }
-                                                    
+
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     )
@@ -599,7 +599,7 @@ const Service = () => {
                                         return (
                                             <div className="service_page_list_box" key={id}>
                                                 <div className={`service_page_list_name ${context.serviceMainHead?.title === item?.title ? "active" : ""}`}
-                                                    onClick={() => context.handleServiceDeatil(item, null)}>{item?.title}</div>
+                                                    onClick={() => context.handleServiceDeatil(item, "nuul")}>{item?.title}</div>
 
 
                                                 {/* <div className={`service_page_list_sub_title hello ${child} ${context.serviceMainHead?.title === item?.title ? "drop_down" : ""}`}>

@@ -447,6 +447,7 @@
 .navigation > li .mega-menu-bar > ul > li > a:hover {
   color: var(--primary-color);
 } */
+
 .social_icon_content {
   position: fixed;
   top: 40%;
@@ -460,6 +461,24 @@
   flex-direction: column;
   gap: 5px;
   z-index: 10;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.social_media_icon {
+  opacity: 0;
+  right: -5%;
+  position: fixed;
+  top: 40%;
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background-color: #ffffffc1;
+  box-shadow: rgba(0 0 0 /0.2) 0 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  transition: all 0.5s ease;
 }
 .social_icon_box {
   font-size: 28px;
@@ -839,6 +858,24 @@
   }
   .hero_banner_content {
     height: 55vh;
+  }
+  /* .social_media_icon {
+    opacity: 1;
+    right: 5%;
+  } */
+  .social_icon_content {
+    right: -5%;
+    opacity: 0;
+  }
+  .social_icon_content.active {
+    right: 5%;
+    opacity: 1;
+  }
+  .social_media_icon.active {
+    right: 5%;
+    background: var(--main-color);
+    opacity: 0.8;
+    color: var(--white-color);
   }
 }
 @media screen and (max-width: 590px) {

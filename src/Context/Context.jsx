@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useRef, useState } from 'react'
 import { servicesDoc } from '../data/service/ServiceDetails';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Doctors } from '../data/doctor/doctor';
@@ -13,6 +13,44 @@ export const AppProvider = ({ children }) => {
     const [doctor, setDoctor] = useState(Doctors[0])
     const [slider, setSlider] = useState(null)
     const [navbar, setNavbar] = useState(null)
+    const [toggle, setToggle] = useState(false)
+    const [social, setSocial] = useState(false)
+
+    const divRef = useRef(null);
+    const socialRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setToggle(false);
+            setSocial(false)
+        };
+
+        const handleClickOutside = (event) => {
+            if (divRef.current && !divRef.current.contains(event.target)) {
+                setToggle(false);
+            }
+            if (socialRef.current && !socialRef.current.contains(event.target)) {
+                setSocial(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Cleanup the event listeners on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const toggleOnclick = () => {
+        setToggle(!toggle)
+    }
+
+    const socialOnclick = () => {
+        setSocial(!social)
+    }
 
     const handleServiceDeatil = (main, product, i) => {
         if (location.pathname !== 'service') {
@@ -23,12 +61,13 @@ export const AppProvider = ({ children }) => {
         // }
         setSlider(i)
         setNavbar(2)
+        setToggle(false)
         if (product?.name === servicePerDetail?.name) {
             setServicePerDeatil(null)
         }
         if (product === null) {
             if (main === serviceMainHead) {
-                setServicePerDeatil(null)
+                setMainServiceHead(null)
             }
             else {
                 setMainServiceHead(main)
@@ -54,6 +93,7 @@ export const AppProvider = ({ children }) => {
         }
         setDoctor(item)
         setNavbar(3)
+        setToggle(false)
     }
 
     const handleClickNavbar = (id) => {
@@ -67,6 +107,7 @@ export const AppProvider = ({ children }) => {
             else {
                 navigator("contact")
             }
+            setToggle(false)
             setNavbar(id)
         }
     }
@@ -79,7 +120,13 @@ export const AppProvider = ({ children }) => {
         handleClickDoctor,
         slider,
         navbar,
-        handleClickNavbar
+        handleClickNavbar,
+        toggle,
+        divRef,
+        toggleOnclick,
+        social,
+        socialRef,
+        socialOnclick
     }
 
     console.log(serviceMainHead)

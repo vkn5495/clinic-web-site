@@ -97,7 +97,7 @@ const FooterTwo = () => {
                                                     return (
                                                         <div key={i} className="FooterTwo_des_box"
                                                             onClick={id === 0 ? () => context.handleClickDoctor(prodt) :
-                                                                (id === 1 || id === 4) ? () => context.handleServiceDeatil(prodt, null) :
+                                                                (id === 1 || id === 4) ? () => context.handleServiceDeatil(prodt, 'null') :
                                                                     prodt?.link ? () => handleClick(prodt?.link, prodt?.target) : null
                                                             }>
                                                             {prodt?.icon && <span>{prodt?.icon}</span>}
