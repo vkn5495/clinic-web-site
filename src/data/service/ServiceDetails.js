@@ -1020,8 +1020,8 @@ export const servicesDoc = [
           "Temporomandibular joint (TMJ) concerns refer to problems affecting the jaw joint and the muscles that control jaw movement.",
           "Symptoms: pain, discomfort, clicking or popping noises, and difficulty with jaw movement.",
           "Cause: jaw injury, arthritis, teeth grinding (bruxism), or misalignment of the jaw or teeth.",
-          "To note: The TM Joint is very delicate and highly susceptible to stress. The pain can radiate to the neck and shoulder muscles in severe cases.",
         ],
+        note:"To note: The TM Joint is very delicate and highly susceptible to stress. The pain can radiate to the neck and shoulder muscles in severe cases.",
         head: {
           heading: "What are Temporomandibular Joint (Jaw Joint) Concerns?",
           des: [
@@ -1071,8 +1071,8 @@ export const servicesDoc = [
         mainDes: [
           "Oral cancer may develop in any part of the mouth, including the lips, tongue, gums, floor of the mouth, and the roof of the mouth (palate).It can also affect the salivary glands",
           "Early detection and treatment of oral cancer are crucial for improving outcomes and reducing complications.",
-          "To note: The presence of a non-healing ulcer or sharp tooth trauma/wound in the mouth requires immediate attention.",
         ],
+        note:"To note: The presence of a non-healing ulcer or sharp tooth trauma/wound in the mouth requires immediate attention.",
         head: {
           heading: "What is Oral Cancer?",
           des: [
@@ -1119,8 +1119,9 @@ export const servicesDoc = [
         subName: "(May present in any part of the Face, Jaw & Mouth)",
         mainDes: [
           "Cysts & Tumors of the Face, Jaw & Mouth may also involve  salivary glands, sinuses, and other structures in the head and neck region.",
-          "To Note: Any painless swelling on the face that gradually increases in size needs to be evaluated.",
+          
         ],
+        note:"To Note: Any painless swelling on the face that gradually increases in size needs to be evaluated.",
         img: PathologyTumour,
         head: {
           heading: "What is Head and Neck Pathology/Tumor?",
@@ -1170,8 +1171,9 @@ export const servicesDoc = [
         mainDes: [
           "Corrective jaw surgery, also known as Orthognathic Surgery, is a surgical procedure performed to correct jaw abnormalities and improve facial balance.",
           "The surgery may involve repositioning the upper jaw (maxilla), lower jaw (mandible), or both to achieve optimal alignment and function.",
-          "To Note: This surgery is done when braces alone cannot correct the malalignment of the teeth or when the jaw bones need correction.",
+          
         ],
+        note:"To Note: This surgery is done when braces alone cannot correct the malalignment of the teeth or when the jaw bones need correction.",
         img: CorrectiveJaw,
         head: {
           heading: "What is Corrective Jaw Surgery?",

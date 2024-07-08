@@ -29,5 +29,5 @@ export const Doctors = [
       "He is proficient in aesthetic rehabilitation of endodontically treated teeth and aesthetic restoration. He demonstrates astute clinical skills in re-treating cases and excels in overcoming errors.",
       "During his leisure time, Dr. Satyajit is an enthusiastic trekker, often embarking on challenging expeditions to scale the heights of the Western Ghats or the Himalayas.",
     ],
-  },
+  }
 ];

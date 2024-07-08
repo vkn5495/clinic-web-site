@@ -364,14 +364,14 @@ const SubTitleComTwo = ({ subTitle }) => {
                                                                 u?.mainDes?.map((item, id) => {
                                                                     return (
                                                                         <div key={id} className={`service_page_list_sub_title_two_des_box
-                                                                            ${u?.name === "Temporomandibular Joint (TMJ) disorders" &&
-                                                                                id === 3 ? "highlight" : ""
+                                                                            
                                                                             }`}>{item}</div>
                                                                     )
                                                                 })
                                                             }
                                                         </div>
-                                                        <ComOne item={u?.mainDesTwo} />
+                                                        { u?.note && <div className="to_note">{u?.note}</div>}
+                                                        { u?.mainDesTwo && <ComOne item={u?.mainDesTwo} />}
                                                     </div>
                                                 </div>
                                             )
@@ -405,7 +405,9 @@ const SubTitleComTwo = ({ subTitle }) => {
                                                             )
                                                         })
                                                     }
+                                                    
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                     )
@@ -450,7 +452,7 @@ const ComSix = ({ item, mobile }) => {
                 </div>
                 <div className={`service_page_details_two
                     ${mobile ? "mobile" : ""}
-                    ${item?.title === context.serviceMainHead?.title ? "active" : ""}`}>
+                    ${item?.title === context.serviceMainHead?.title ? "active" : "dis_active"}`}>
                     <div className="service_page_des_content_details">
                         <div className="first_col">
                             {/* <div className='service_page_des_content_details_heading'>{context.servicePerDetail?.head?.heading}</div> */}
