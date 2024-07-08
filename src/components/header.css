@@ -466,9 +466,10 @@
 }
 .social_media_icon {
   opacity: 0;
+  cursor: pointer;
   right: -5%;
   position: fixed;
-  top: 40%;
+  top: 55%;
   padding: 10px 8px;
   border-radius: 8px;
   border: 1px solid #d9d9d9;
@@ -479,6 +480,7 @@
   gap: 5px;
   z-index: 10;
   transition: all 0.5s ease;
+  font-size: 24px;
 }
 .social_icon_box {
   font-size: 28px;
@@ -864,8 +866,8 @@
     right: 5%;
   } */
   .social_icon_content {
-    right: -5%;
-    opacity: 0;
+    right: -50%;
+    opacity: 1;
   }
   .social_icon_content.active {
     right: 5%;

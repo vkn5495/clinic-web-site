@@ -389,7 +389,23 @@ const Navbar = () => {
     const [hoverLanguage, setHoverLanguage] = useState(false)
     const [toggle, setToggle] = useState(false)
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const stickyDiv = stickyDivRef.current;
+            if (window.scrollY > 125) {
+                setStickyHeader(true)
+            } else {
+                setStickyHeader(false)
+            }
+        };
 
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const { t } = useTranslation();
 
