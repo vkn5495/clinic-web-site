@@ -51,6 +51,9 @@
 .FooterTwo_des_box span:last-child {
   transition: all 0.3s ease;
 }
+.FooterTwo_des_box .small {
+  text-transform: lowercase !important;
+}
 .FooterTwo_des_box span:last-child:hover {
   color: var(--secondary-color);
   font-weight: 600;

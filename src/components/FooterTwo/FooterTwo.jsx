@@ -75,6 +75,7 @@ const FooterTwo = () => {
                     name: "facemultispecialtyclinic@gmail.com",
                     link: 'mailto:facemultispecialtyclinic@gmail.com',
                     target: '_blank',
+                    case: "small",
                     icon: <MdEmail />
                 }
             ]
@@ -101,7 +102,7 @@ const FooterTwo = () => {
                                                                     prodt?.link ? () => handleClick(prodt?.link, prodt?.target) : null
                                                             }>
                                                             {prodt?.icon && <span>{prodt?.icon}</span>}
-                                                            {prodt?.name && <span>{prodt?.name}</span>}
+                                                            {prodt?.name && <span className={`${prodt?.case === "small" ? "small" : ""}`}>{prodt?.name}</span>}
                                                             <span>{prodt?.title}</span>
                                                         </div>
                                                     )
