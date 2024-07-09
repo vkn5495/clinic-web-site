@@ -867,7 +867,7 @@
   } */
   .social_icon_content {
     right: -50%;
-    opacity: 1;
+    opacity: 0;
   }
   .social_icon_content.active {
     right: 5%;
